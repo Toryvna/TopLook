@@ -1,0 +1,194 @@
+@import "flexbox";
+.footer{
+    background-color: #000000;  
+    &__info{
+        padding: 30px 0;
+        .wrapper{
+            .item{
+                margin-bottom: 30px;
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+                .title{
+                    color: #ffffff;
+                    font-family: "Montserrat-SemiBold";
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                &.logo{
+                    width: 100%;
+                    a{
+                        display: block;
+                        width: 42px;
+                        margin: 0 auto;
+                        img{
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                    }
+                }
+                &.menu{
+                    width: 100%;
+                    .footerMenu {
+                        ul{
+                            @include flexbox;
+                            @include justify-content(center);
+                            @include flex-wrap(wrap);
+                            li{
+                                width: calc(50% - 10px);
+                                text-align: center;
+                                margin-bottom: 5px;
+                                a{
+                                    color: #ffffff;
+                                    font-size: 14px;
+                                    &:hover{
+                                        color: #ffb9ab;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.contacts{
+                    width: 100%;
+                    text-align: center;
+                    ul{
+                        li{
+                            margin-bottom: 5px;
+                            &:last-of-type{
+                                margin-bottom: 0;
+                            }
+                            a{
+                                color: #fff;
+                                font-size: 14px;
+                                i{
+                                    margin-right: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.socials{
+                    width: 100%;
+                    .social{
+                        @include flexbox;
+                        @include justify-content(center);
+                        @include align-items(center);
+                        li{
+                            margin-right: 10px;
+                            &:last-of-type{
+                                margin-right: 0;
+                            }
+                            a{
+                                border-bottom: 3px solid transparent;
+                                padding-bottom: 5px;
+                                i{
+                                    font-size: 15px;
+                                    color: #fff;
+                                }
+                                &:hover{
+                                    border-color: #ffb9ab;
+                                    i{
+                                        color: #ffb9ab;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__copyright{
+        background-color: #0b0b0b;
+        padding: 10px 0;
+        p{
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            font-family: 'Montserrat-Light';
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        &__info{
+            .wrapper{
+                @include flexbox;
+                @include align-items(flex-start);
+                @include justify-content(space-between);
+                @include flex-wrap(wrap);
+                .item{
+                    .title{
+                        text-align: left;
+                    }
+                    &.logo{
+                        width: 72px;
+                        a{
+                            width: 72px;
+                        }
+                    }
+                    &.menu{
+                        width: 300px;
+                        .footerMenu{
+                            ul{
+                                li{
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                    &.contacts{
+                        width: auto;
+                        text-align: left;
+                    }
+                    &.socials{
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px){
+    .footer{
+        &__info {
+            padding-bottom: 0;
+            .wrapper {
+                .item{
+                    .title{
+                        font-size: 18px;
+                        margin-bottom: 30px;
+                    }
+                    &.menu {
+                        .footerMenu {
+                            ul {
+                                li {
+                                    a {
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.contacts{
+                        ul{
+                            li{
+                                a{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
